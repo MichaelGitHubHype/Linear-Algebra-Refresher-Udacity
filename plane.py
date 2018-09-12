@@ -133,6 +133,7 @@ class Plane(object):
 
     @staticmethod
     def first_nonzero_index(iterable):
+        iterable = iterable.coordinates
         for k, item in enumerate(iterable):
             if not MyDecimal(item).is_near_zero():
                 return k
@@ -147,8 +148,8 @@ if __name__ == '__main__':
     plane1 = Plane(Vector([-0.412, 3.806, 0.728]), -3.46)
     plane2 = Plane(Vector([1.03, -9.515, -1.82]), 8.65)
 
-    print '1 is parallel: {}'.format(plane1.is_parallel(plane2))
-    print '1 is equal: {}'.format(plane1 == plane2)
+    print('1 is parallel: {}'.format(plane1.is_parallel(plane2)))
+    print('1 is equal: {}'.format(plane1 == plane2))
 
     # second system of planes:
     # 2.611x + 5.528y + 0.283z = 4.6
@@ -157,8 +158,8 @@ if __name__ == '__main__':
     plane3 = Plane(Vector([2.611, 5.528, 0.283]), 4.6)
     plane4 = Plane(Vector([7.715, 8.306, 5.342]), 3.76)
 
-    print '2 is parallel: {}'.format(plane3.is_parallel(plane4))
-    print '2 is equal: {}'.format(plane3 == plane4)
+    print('2 is parallel: {}'.format(plane3.is_parallel(plane4)))
+    print('2 is equal: {}'.format(plane3 == plane4))
 
     # third system of planes:
     # -7.926x + 8.625y - 7.212z = -7.952
@@ -167,5 +168,5 @@ if __name__ == '__main__':
     plane5 = Plane(Vector([-7.926, 8.625, -7.212]), -7.952)
     plane6 = Plane(Vector([-2.642, 2.875, -2.404]), -2.443)
 
-    print '3 is parallel: {}'.format(plane5.is_parallel(plane6))
-    print '3 is equal: {}'.format(plane5 == plane6)
+    print('3 is parallel: {}'.format(plane5.is_parallel(plane6)))
+    print('3 is equal: {}'.format(plane5 == plane6))

@@ -141,6 +141,7 @@ class Hyperplane(object):
 
     @staticmethod
     def first_nonzero_index(iterable):
+        iterable = iterable.coordinates
         for k, item in enumerate(iterable):
             if not MyDecimal(item).is_near_zero():
                 return k
